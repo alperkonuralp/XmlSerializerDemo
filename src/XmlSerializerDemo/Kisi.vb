@@ -1,56 +1,52 @@
 ﻿Imports System.Xml.Serialization
 
+''' <summary>
+''' Kisi Sınıfı
+''' </summary>
 <XmlRoot>
 Public Class Kisi
-
-    Private _id As Long
-    Private _adi As String
-    Private _soyadi As String
-    Private _dogumTarihi As DateTime
-
+    ''' <summary>
+    ''' Gets or sets the identifier.
+    ''' </summary>
+    ''' <value>
+    ''' The identifier.
+    ''' </value>
     <XmlAttribute>
-    Public Property ID() As Long
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Long)
-            _id = value
-        End Set
-    End Property
+    Public Property Id() As Long
 
-
-    <XmlElement>
+    ''' <summary>
+    ''' Gets or sets the adi.
+    ''' </summary>
+    ''' <value>
+    ''' The adi.
+    ''' </value>
+    <XmlAttribute>
     Public Property Adi() As String
-        Get
-            Return _adi
-        End Get
-        Set(ByVal value As String)
-            _adi = value
-        End Set
-    End Property
 
-
-
-    <XmlElement>
+    ''' <summary>
+    ''' Gets or sets the soyadi.
+    ''' </summary>
+    ''' <value>
+    ''' The soyadi.
+    ''' </value>
+    <XmlAttribute>
     Public Property Soyadi() As String
-        Get
-            Return _soyadi
-        End Get
-        Set(ByVal value As String)
-            _soyadi = value
-        End Set
-    End Property
 
-
+    ''' <summary>
+    ''' Gets or sets the dogum tarihi.
+    ''' </summary>
+    ''' <value>
+    ''' The dogum tarihi.
+    ''' </value>
     <XmlElement>
-    Public Property DogumTarihi() As DateTime
-        Get
-            Return _dogumTarihi
-        End Get
-        Set(ByVal value As DateTime)
-            _dogumTarihi = value
-        End Set
-    End Property
+    Public Property DogumTarihi() As Date
 
-
+    ''' <summary>
+    ''' Gets or sets the adresler.
+    ''' </summary>
+    ''' <value>
+    ''' The adresler.
+    ''' </value>
+    <XmlElement("Adres")>
+    Public Property Adresler() As List(Of Adres)
 End Class
