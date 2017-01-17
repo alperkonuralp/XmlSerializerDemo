@@ -1,3 +1,6 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Xml.Serialization;
 
 namespace XmlSerializerCSDemo
@@ -6,7 +9,9 @@ namespace XmlSerializerCSDemo
     /// <summary>
     /// Adres Sýnýfý
     /// </summary>
+    [Serializable]
     [XmlRoot]
+    [JsonObject]
     public class Adres
     {
         /// <summary>
@@ -16,6 +21,7 @@ namespace XmlSerializerCSDemo
         /// The identifier.
         /// </value>
         [XmlAttribute]
+        [JsonProperty("id")]
         public long Id { get; set; }
 
         /// <summary>
@@ -25,6 +31,8 @@ namespace XmlSerializerCSDemo
         /// The adres tipi.
         /// </value>
         [XmlAttribute]
+        [JsonProperty("adresTipi")]
+        [JsonConverter(typeof(StringEnumConverter))]
         public AdresTipi AdresTipi { get; set; }
 
         /// <summary>
@@ -34,6 +42,7 @@ namespace XmlSerializerCSDemo
         /// The adres satiri1.
         /// </value>
         [XmlElement]
+        [JsonProperty("adresSatiri1")]
         public string AdresSatiri1 { get; set; }
 
         /// <summary>
@@ -43,6 +52,7 @@ namespace XmlSerializerCSDemo
         /// The adres satiri2.
         /// </value>
         [XmlElement]
+        [JsonProperty("adresSatiri2")]
         public string AdresSatiri2 { get; set; }
 
         /// <summary>
@@ -52,6 +62,7 @@ namespace XmlSerializerCSDemo
         /// The ilce.
         /// </value>
         [XmlElement]
+        [JsonProperty("ilce")]
         public string Ilce { get; set; }
 
         /// <summary>
@@ -61,6 +72,7 @@ namespace XmlSerializerCSDemo
         /// The il.
         /// </value>
         [XmlElement]
+        [JsonProperty("il")]
         public string Il { get; set; }
     }
 

@@ -15,8 +15,7 @@ namespace XmlSerializerCSDemo
         /// <summary>
         /// Mains the specified arguments.
         /// </summary>
-        /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        static void Main()
         {
             // kişi objesini oluşturalım
             var kisi = new Kisi
@@ -71,6 +70,19 @@ namespace XmlSerializerCSDemo
             var obj = Deserialize<Kisi>(str);
 
             Console.WriteLine(obj.Id);
+
+
+            // json serileştirme örneği 
+            var jsonstr = JsonSerialize(kisi);
+
+            Console.WriteLine(jsonstr);
+            // sonuç : 
+            // {"id":1,"adi":"Alper","soyadi":"Konuralp","dogumTarihi":"1978-06-19T00:00:00","adresler":[{"id":1,"adresTipi":"Ev","adresSatiri1":"Mehmet Akif Mah.","adresSatiri2":null,"ilce":"Çekmeköy","il":"İstanbul"},{"id":2,"adresTipi":"Is","adresSatiri1":"Arçelik A.Ş.","adresSatiri2":"Sütlüce","ilce":"Beyoğlu","il":"İstanbul"}]}
+
+            // json string'den object'e çevirme (ters serileştirme)
+            var jsonObject = JsonDeserialize<Kisi>(jsonstr);
+
+            Console.WriteLine(jsonObject.Id);
         }
 
 

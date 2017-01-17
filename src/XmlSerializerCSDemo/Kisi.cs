@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -7,7 +8,9 @@ namespace XmlSerializerCSDemo
     /// <summary>
     /// Kisi Sınıfı
     /// </summary>
+    [Serializable]
     [XmlRoot]
+    [JsonObject]
     public class Kisi
     {
         /// <summary>
@@ -17,6 +20,7 @@ namespace XmlSerializerCSDemo
         /// The identifier.
         /// </value>
         [XmlAttribute]
+        [JsonProperty("id")]
         public long Id { get; set; }
 
         /// <summary>
@@ -26,6 +30,7 @@ namespace XmlSerializerCSDemo
         /// The adi.
         /// </value>
         [XmlAttribute]
+        [JsonProperty("adi")]
         public string Adi { get; set; }
 
         /// <summary>
@@ -35,6 +40,7 @@ namespace XmlSerializerCSDemo
         /// The soyadi.
         /// </value>
         [XmlAttribute]
+        [JsonProperty("soyadi")]
         public string Soyadi { get; set; }
 
         /// <summary>
@@ -44,6 +50,7 @@ namespace XmlSerializerCSDemo
         /// The dogum tarihi.
         /// </value>
         [XmlElement]
+        [JsonProperty("dogumTarihi")]
         public DateTime DogumTarihi { get; set; }
 
         /// <summary>
@@ -53,6 +60,7 @@ namespace XmlSerializerCSDemo
         /// The adresler.
         /// </value>
         [XmlElement("Adres")]
+        [JsonProperty("adresler")]
         public List<Adres> Adresler { get; set; }
     }
 

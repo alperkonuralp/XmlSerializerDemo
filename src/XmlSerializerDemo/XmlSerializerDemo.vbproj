@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{53E9C0C0-DE34-4BBE-A70F-02F8F8B62985}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>XmlSerializerDemo.Module1</StartupObject>
+    <StartupObject>XmlSerializerDemo.XmlSerializerDemo.Program</StartupObject>
     <RootNamespace>XmlSerializerDemo</RootNamespace>
     <AssemblyName>XmlSerializerDemo</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -75,7 +75,7 @@
     <Compile Include="Adres.vb" />
     <Compile Include="AdresTipi.vb" />
     <Compile Include="Kisi.vb" />
-    <Compile Include="Module1.vb" />
+    <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

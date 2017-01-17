@@ -1,21 +1,23 @@
-﻿
-Imports System.Xml.Serialization
+﻿Imports System.Xml.Serialization
 
-
-''' <summary>
-''' Adres Tipi enum tipi
-''' </summary>
-<XmlRoot>
-Public Enum AdresTipi
-    ''' <summary>
-    ''' The ev
-    ''' </summary>
-    <XmlEnum>
-    Ev
+Namespace XmlSerializerDemo
 
     ''' <summary>
-    ''' The iş
+    ''' Adres Tipi enum tipi
     ''' </summary>
-    <XmlEnum>
-    [Is]
-End Enum
+    <XmlRoot>
+    Public Enum AdresTipi
+        ''' <summary>
+        ''' The ev
+        ''' </summary>
+        <XmlEnum>
+        Ev
+
+        ''' <summary>
+        ''' The iş
+        ''' </summary>
+        <XmlEnum>
+        [Is]
+    End Enum
+
+End Namespace
